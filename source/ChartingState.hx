@@ -91,6 +91,7 @@ class ChartingState extends MusicBeatState
 	var player1:Boyfriend = new Boyfriend(0,0, "bf");
 
 	var leftIcon:HealthIcon;
+	public static var defaultnoteStyle:String;
 	var rightIcon:HealthIcon;
 
 	private var lastNote:Note;
@@ -349,6 +350,7 @@ class ChartingState extends MusicBeatState
 		var noteStyleDropDown = new FlxUIDropDownMenu(10, 300, FlxUIDropDownMenu.makeStrIdLabelArray(noteStyles, true), function(noteStyle:String)
 			{
 				_song.noteStyle = noteStyles[Std.parseInt(noteStyle)];
+				defaultnoteStyle = noteStyles[Std.parseInt(noteStyle)];
 			});
 		noteStyleDropDown.selectedLabel = _song.noteStyle;
 

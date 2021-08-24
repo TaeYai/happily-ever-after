@@ -164,6 +164,7 @@ class TitleState extends MusicBeatState
 
 		Conductor.changeBPM(102);
 		persistentUpdate = true;
+		FlxG.save.data.loading = false;
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		// bg.antialiasing = true;
@@ -324,13 +325,13 @@ class TitleState extends MusicBeatState
 					returnedData[0] = data.substring(0, data.indexOf(';'));
 					returnedData[1] = data.substring(data.indexOf('-'), data.length);
 				  	
-						FlxG.switchState(new MainMenuState());
+						FlxG.switchState(new Warning());
 					
 				}
 				
 				http.onError = function (error) {
 				  trace('error: $error');
-				  FlxG.switchState(new MainMenuState()); // fail but we go anyway
+				  FlxG.switchState(new Warning()); // fail but we go anyway
 				}
 				
 				http.request();
@@ -393,7 +394,7 @@ class TitleState extends MusicBeatState
 		switch (curBeat)
 		{
 			case 1:
-				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
+				createCoolText(['TaeYai']);
 			// credTextShit.visible = true;
 			case 3:
 				addMoreText('present');
@@ -410,6 +411,8 @@ class TitleState extends MusicBeatState
 				else
 					createCoolText(['In Partnership', 'with']);
 			case 7:
+				FlxG.camera.flash(FlxColor.WHITE, 1);
+				FlxG.camera.shake(0.2, 0.2);
 				if (Main.watermarks)
 					addMoreText('KadeDeveloper');
 				else
@@ -437,7 +440,7 @@ class TitleState extends MusicBeatState
 			// credTextShit.text = "Friday";
 			// credTextShit.screenCenter();
 			case 13:
-				addMoreText('Friday');
+				addMoreText('Dating');
 			// credTextShit.visible = true;
 			case 14:
 				addMoreText('Night');

@@ -182,7 +182,11 @@ class MainMenuState extends MusicBeatState
 			{
 				if (optionShit[curSelected] == 'donate')
 				{
-					fancyOpenURL("https://ninja-muffin24.itch.io/funkin");
+					FlxG.switchState(new Warning3());
+
+					FlxG.save.data.credit = true;
+
+					trace("CreditState Menu Selected");
 				}
 				else
 				{
@@ -247,7 +251,7 @@ class MainMenuState extends MusicBeatState
 				PlayState.storyDifficulty = 2;
 	
 				PlayState.SONG = Song.loadFromJson(StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase() + '-hard', StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase());
-				PlayState.storyWeek = 7;
+				PlayState.storyWeek = 1;
 				PlayState.campaignScore = 0;
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{

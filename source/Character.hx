@@ -32,7 +32,7 @@ class Character extends FlxSprite
 		{
 			case 'gf':
 				// GIRLFRIEND CODE
-				tex = Paths.getSparrowAtlas('characters/GF_assets');
+				tex = Paths.getSparrowAtlas('characters/GFtae');
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
 				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
@@ -842,7 +842,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 				// matt slot
 			case 'matt':
-				tex = Paths.getSparrowAtlas('matt');
+				tex = Paths.getSparrowAtlas('lover/matt');
 
 				frames = tex;
 
@@ -965,7 +965,7 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 			//imposter
-			case 'impostor':
+			case 'imposter':
 				tex = Paths.getSparrowAtlas('lover/impostor');
 				frames = tex;
 				animation.addByPrefix('idle', 'impostor idle', 12);
@@ -983,6 +983,57 @@ class Character extends FlxSprite
 				addOffset("singDOWN", -36, -65);
 				addOffset("shoot1", -54, 75);
 				addOffset("shoot2", -27, 124);
+
+				playAnim('idle');
+			//cosmo
+			case 'pierogii':
+				tex = Paths.getSparrowAtlas('lover/pierogii_assets');
+				frames = tex;
+				animation.addByPrefix('idle', 'pierogii idle', 24);
+				animation.addByPrefix('singUP', 'pierogii up', 24);
+				animation.addByPrefix('singRIGHT', 'pierogii right', 24);
+				animation.addByPrefix('singDOWN', 'pierogii down', 24);
+				animation.addByPrefix('singLEFT', 'pierogii left', 24);
+				animation.addByPrefix('confused', 'pierogii confused', 24);
+
+				addOffset('idle');
+				addOffset("singUP");
+				addOffset("singRIGHT");
+				addOffset("singLEFT");
+				addOffset("singDOWN");
+				addOffset("confused");
+
+				playAnim('idle');
+			//bob
+			case 'bob2':
+				frames = Paths.getSparrowAtlas('lover/bob_assets');
+				animation.addByPrefix('idle', 'BOB idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BOB Sing Note UP', 24, false);
+				animation.addByPrefix('singDOWN', 'BOB Sing Note DOWN', 24, false);
+				animation.addByPrefix('singLEFT', 'BOB Sing Note LEFT', 24, false);
+				animation.addByPrefix('singRIGHT', 'BOB Sing Note RIGHT', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", -36, 57);
+				addOffset("singRIGHT", -62, 32);
+				addOffset("singLEFT",31, 13);
+				addOffset("singDOWN", -31, -10);
+
+				playAnim('idle');
+			//bosip
+			case 'bosip':
+				frames = Paths.getSparrowAtlas('lover/bosip_assets');
+				animation.addByPrefix('idle', 'Bosip idle dance', 24, false);
+				animation.addByPrefix('singUP', 'Bosip Sing Note UP', 24, false);
+				animation.addByPrefix('singDOWN', 'Bosip Sing Note DOWN', 24, false);
+				animation.addByPrefix('singLEFT', 'Bosip Sing Note LEFT', 24, false);
+				animation.addByPrefix('singRIGHT', 'Bosip Sing Note RIGHT', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 23, 24);
+				addOffset("singRIGHT", -6, -18);
+				addOffset("singLEFT", 64, 7);
+				addOffset("singDOWN", 22, -18);
 
 				playAnim('idle');
 			//miku
@@ -1230,7 +1281,14 @@ class Character extends FlxSprite
 						else
 							playAnim('danceLeft');
 					}
+					case 'carol_date':
+					
+						if (danced)
+							playAnim('danceRight');
+						else
+							playAnim('danceLeft');
 
+					
 				case 'gf-christmas':
 					if (!animation.curAnim.name.startsWith('hair'))
 					{

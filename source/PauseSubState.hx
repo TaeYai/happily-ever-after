@@ -213,6 +213,7 @@ class PauseSubState extends MusicBeatSubstate
 						GlobalVideo.get().stop();
 						PlayState.instance.remove(PlayState.instance.videoSprite);
 						PlayState.instance.removedVideo = true;
+						FlxG.save.data.loading = true;
 					}
 					FlxG.resetState();
 				case "Exit to menu":
@@ -240,10 +241,11 @@ class PauseSubState extends MusicBeatSubstate
 						(cast (Lib.current.getChildAt(0), Main)).setFPSCap(290);
 					
 					FlxG.switchState(new MainMenuState());
+					FlxG.save.data.loading = false;
 			}
 		}
 
-		if (FlxG.keys.justPressed.J)
+		if (FlxG.keys.justPressed.T)
 		{
 			// for reference later!
 			// PlayerSettings.player1.controls.replaceBinding(Control.LEFT, Keys, FlxKey.J, null);

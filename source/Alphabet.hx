@@ -24,6 +24,8 @@ class Alphabet extends FlxSpriteGroup
 	public var isMenuItem:Bool = false;
 
 	public var text:String = "";
+	public var isLabel:Bool = true;
+	public var tracker:FlxSprite;
 
 	var _finalText:String = "";
 	var _curText:String = "";
@@ -36,6 +38,7 @@ class Alphabet extends FlxSpriteGroup
 	// amp, backslash, question mark, apostrophy, comma, angry faic, period
 	var lastSprite:AlphaCharacter;
 	var xPosResetted:Bool = false;
+	public var move:Bool = true;
 	var lastWasSpace:Bool = false;
 
 	var listOAlphabets:List<AlphaCharacter> = new List<AlphaCharacter>();
@@ -257,6 +260,10 @@ class Alphabet extends FlxSpriteGroup
 
 			y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.48), 0.30);
 			x = FlxMath.lerp(x, (targetY * 20) + 90, 0.30);
+			if (isLabel)
+				y -= 30;
+			if (move)
+				x = FlxMath.lerp(x, (targetY * 20) + 90, 0.30);
 		}
 
 		super.update(elapsed);

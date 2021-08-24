@@ -1,2 +1,5 @@
 normal
 pixel
+cosmo
+cj
+bob
