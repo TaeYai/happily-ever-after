@@ -38,6 +38,7 @@ class Warning4 extends MusicBeatState
 			+ "\nTricky Mod"
 			+ "\nHD Senpai over Dad"
 			+ "\nHD Monika over Dad "
+			+ "\nWeek 6 HD "
 			+ "\nFriday Night Vibin' "
 			+ "\nPress Enter To Leave This Page",
 			32);

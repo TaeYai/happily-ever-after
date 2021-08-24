@@ -5071,7 +5071,7 @@ class PlayState extends MusicBeatState
 		}
 		#end
 
-		if (curSong == 'Heartbass') {
+		if (curSong == 'heartbass') {
 			mini.animation.play('idle', true);
 			if (stopWalkTimer == 0) {
 				if (walkingRight)
